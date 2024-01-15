@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 
 *{
@@ -21,21 +22,26 @@ a{
 
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: #181818;
+    height: 100vh;
+    background-color: #ffffff;
+    
 }
 
 nav{
-    max-width: 1200px;
-    margin: auto;
-    padding: 2rem 1rem;
+
+    margin-top: 0%;
+    margin-right: 0%;
+    padding: 0.5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+    background-color: #d7e1ec;
+    box-shadow: 0 3px 3px rgba(0,0,0,.2);
 }
 
 .nav-logo{
-    max-width: 100px;
+    max-width: 75px;
 }
 
 .nav-links{
@@ -48,7 +54,7 @@ nav{
 .link a{
     position: relative;
     padding-bottom: 0.75rem;
-    color: #fff;
+    color: #181818;
 }
 
 .link a::after{
@@ -66,16 +72,105 @@ nav{
     width: 70%;
 }
 
-.btn{
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #1d4ed8;
-    border-radius: 5px;
+#btnI{
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
     cursor: pointer;
-    transform: all 0.3s ease;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    }
+  
+  #btnI:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+  }
+  
+  @media (min-width: 768px) {
+  #btnI{
+      padding: 0.25em 0.75em;
+    }
 }
 
-.btn:hover{
-    background-color: #1d40af;
+#btnC{
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+}
+
+.social-btn {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    background: white;
+    margin: 5px;
+    transition: 1s;
+}
+
+.social-btn span {
+    width: 0px;
+    overflow: hidden;
+    transition: 1s;
+    text-align: center;
+}
+
+.social-btn:hover {
+    width: 150px;
+    border-radius: 5px;
+}
+
+.social-btn:hover span {
+    padding: 2px;
+    width: max-content;
+}
+
+
+#github {
+    fill: #333;
 }
