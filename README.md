@@ -36,7 +36,6 @@ UnSold permet aux utilisateurs de bénéficier de chaussures de qualité à des 
 
 Consultez notre [Unsold](https://unslod.000webhostapp.com/) pour découvrir notre sélection de chaussures. Suivez le processus d'achat simple pour obtenir vos chaussures de qualité à des prix exceptionnels.
 
-d'informations.
 
 ## Avertissement Projet Fictif et Non Lucratif
 
