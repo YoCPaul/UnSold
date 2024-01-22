@@ -4,48 +4,55 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
-    
 }
 
-
+body{
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* utilisé pour cacher la barre de défilement horizontale */
+}
 
     /* Police du menu*/
-    body{
+    html, body{
         font-family: 'Arial';
+        background-color: #eee8e2;
     }
 
     /* header */
     header{
-        height: 100vh;
+        height: 30vh;
         width: 100vw;
         background-size: cover;
-    }   
+    }
 
     .navbar{
+        /*position: fixed;     pour faire ne sorte que quand on scroll la bar ne bouge pas d'un poil
+        top: 0px; */
         position: absolute;
-        padding: 50px;                      /* marge interieur, different de margin */
+        padding: 30px;                      /* marge interieur, different de margin */
         display: flex; 
         align-items: center;                        /* Aligner les elements */
         justify-content: space-between;     
         width: 100%;
         box-sizing: border-box;
-        top: 0;
-        position: fixed;
-        z-index: 1;
-        
-        
     }
 
     /* Lien du menu (modif couleur et taille)*/
     .navbar a{
         color: white;
         font-size: 15px;
-
     }
 
-    .navbar .logo{
-        font-size: 2em;
-        font-weight: bold;
+    .nav-links{
+        position: absolute;
+        right: 250px;
+    }
+
+    #logo{
+        position: relative;
+        left: -30px;
+        width: 100%; /* Utilisez une largeur de 100% pour s'adapter à la taille de son conteneur */
+        max-width: 250px;
     }
 
     /* Alignement des elements "acceuil etc..." */
@@ -55,7 +62,7 @@
 
     /* Espacement entre les elements */
     .navbar .nav-links ul li{
-        margin: 0 15px;
+        margin: 0px 15px;
     }
 
     /* Icone menu hamb*/
@@ -72,53 +79,230 @@
         background-color: #b08968;
         height: 100px;
         box-shadow: 0 3px 3px rgba(0,0,0,.2);
-        
+        width: 1000px;
+        min-width: 600px;
     }
 
-    .navbar .nav-links ul li a{
-        color: #fff;
-        font-weight: bold;
-        font-size: 14px;
-        font-family: inherit;
+        /* Survol avec la souris des elements*/
+
+        .navbar .nav-links ul li a{
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: inherit;
+            cursor: pointer;
+            position: relative;
+            border: none;
+            background: none;
+            text-transform: uppercase;
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-duration: 400ms;
+            transition-property: color;
+        }
+        .navbar .nav-links ul li a:focus,
+        .navbar .nav-links ul li a:hover {
+            color: #e6ccb2;
+        }
+        
+        .navbar .nav-links ul li a:focus:after,
+        .navbar .nav-links ul li a:hover:after {
+            width: 100%;
+            left: 0%;
+        }
+        
+        .navbar .nav-links ul li a:after {
+            content: "";
+            pointer-events: none;
+            bottom: -2px;
+            left: 50%;
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: #fff;
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-duration: 400ms;
+            transition-property: width, left;
+        }
+        /* Fin survol avec la souris des elements*/
+
+     
+    
+  
+    /* Fin bouton login */
+    
+    /* Panier */
+    #panier{
+        position: absolute;
+        top: 33px;
+        right: 50px;
+        width: 40px;
+    }
+
+    #compte{
+        position: absolute;
+        top: 33px;
+        right: 150px;
+        width: 40px;
         cursor: pointer;
-        position: relative;
-        border: none;
-        background: none;
-        text-transform: uppercase;
-        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-        transition-duration: 400ms;
-        transition-property: color;
-}
+    }
+
+    
+    /* DropDown menu pour COMPTE */
+        /* Style de base pour la dropdown-menu */
+        
+
+        .dropdown-menu {
+            right: 90px;
+            pointer-events: none;
+            top: 73px;
+            text-align: center;
+            list-style: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: .7rem;
+            transition: opacity 0.1s ease-in-out;
+        }
+    
+        /* Rend la dropdown-menu invisible de base */
+        .dropdown-menu{
+            display: none;
+        }
+
+        /* Rend la dropdown-menu visible au survol */
+        li:hover .dropdown-menu{
+            pointer-events: visible;
+            display: block;
+        }
+
+
+        /* Style pour les options dans la dropdown-menu */
+        .dropdown-menu a {
+            color: #333;
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            border-radius: .7rem;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+
+        /* Change la couleur du fond au survol de l'option */
+        .dropdown-menu a:hover {
+            background-color: #ddd;
+            border-radius: .7rem;
+        }
+    
+
+    /* Fin DropDown menu pour COMPTE */
+
+    /* Barre de recherche */
+
+        /* Main styles*/
+
+        form {
+            top: 100px;
+            right: 10%;
+            width: 20rem;
+            background: #886044;;
+            border-radius: .7rem;
+            align-items: center;
+        }
+        input, button {
+            height: 50px;
+            font-family: 'Arial';
+            border: 0;
+            color: #ddb892;
+            font-size: 1rem;
+        }
+        input[type="search"] {
+            outline: 0; 
+            width: 100%;
+            background: #fff;
+            padding: 0 1.6rem;
+            border-radius: .7rem;
+            appearance: none; 
+            transition: .3s cubic-bezier(0, 0, 0.43, 1.49);
+            transition-property: width, border-radius;
+            z-index: 1;
+            position: relative;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            display: none; 
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4rem;
+            font-weight: bold;
+            background: #886044;
+            border-radius: 0 .7rem .7rem 0;
+        }
+        input:not(:placeholder-shown) {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: calc(100% - 4rem);
+            + button {
+                display: block;
+        }
+        }
+        label {
+            position: absolute;
+            clip: rect(1px, 1px, 1px, 1px);
+            padding: 0;
+            border: 0;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+        }
+
+        .researchbar{
+            position: relative;
+            top: 100px;
+            right: 20%;
+        }
+    
+    /* Fin Barre de recherche */
+
 /* Fin Navbar */
 
 /* Affichage des produit */
 
 div table{
-    margin-top: -700px;
     position: relative;
     left: 30px;
+    margin: auto;
+    border-collapse: separate;
     
 }
+
 
 td, tr{
     width: 400px;
     height: 400px;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: #333;
 }
 /* Fin affichage des produit */
 
 /* Mobile Menu */
-@media screen and (max-width: 840px){
+@media screen and (max-width: 900px){
 
     .navbar{
         padding: 0;
     }
+    body {
+        overflow-y: auto; /* Empêche le défilement vertical sur la page entière */
+    }
 
-    .navbar .logo{
-        position: absolute;
-        left: 50px;
-        top: 23px;
-        font-size: 3em;
-        font-weight: bold;
+    #logo{
+        width: 250px;
+        position: relative;
+        left: 0px;
     }
 
     #iconeMenuHamb{
@@ -167,97 +351,82 @@ td, tr{
     .navbar .nav-links ul li a{
         color: #b08968;
         font-weight: bold;
-        font-size: 30px;
+        font-size: 40px;
     }
 
-    button{
-        display: none;
+    /* Faire disparaitre les boutons */
+    
+
+    #panier{
+        display: block;
+        position: absolute;
+        top: 33px;
+        right: 100px;
+        width: 40px;
+    }
+
+    #panier{
+        display: block;
+        position: absolute;
+        top: 33px;
+        right: 120px;
+        width: 40px;
+    }
+
+    #compte{
+        display: block;
+        position: absolute;
+        top: 33px;
+        right: 190px;
+        width: 40px;
     }
 
 }
 
-.navbar .nav-links ul li a:focus,
-.navbar .nav-links ul li a:hover {
-      color: #e6ccb2;
+/* Fin Mobile Menu */
+
+
+/* Carrousel d'image de produit mis en valeur */
+
+
+/* Fin Carrousel d'image de produit mis en valeur */
+
+
+/* footer */
+footer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box; /* Ceci est important pour inclure la largeur du padding et de la bordure dans le calcul */
 }
-
-.navbar .nav-links ul li a:focus:after,
-.navbar .nav-links ul li a:hover:after {
-      width: 100%;
-      left: 0%;
-}
-
-.navbar .nav-links ul li a:after {
-      content: "";
-      pointer-events: none;
-      bottom: -2px;
-      left: 50%;
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      background-color: #fff;
-      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-      transition-duration: 400ms;
-      transition-property: width, left;
-}
-
-/* Bouton Login */
-button {
-  border: none;
-  outline: none;
-  background-color: #ede0d4;
-  padding: 10px 20px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #fff;
-  border-radius: 5px;
-  transition: all ease 0.1s;
-  box-shadow: 0px 5px 0px 0px #e6ccb2;
-}
-
-button:active {
-  transform: translateY(5px);
-  box-shadow: 0px 0px 0px 0px #e6ccb2;
-}
-
-/* Fin bouton login */
-
-
-
-img{
-    width: 20%;
-    display: flex;
-
-}
-
-body{
-    background-color: #ede0d4;
-}
-
 
 .footer-basic {
-    padding:40px 0;
-    background-color:#ffffff;
-    color:#4b4c4d;
+    padding:20px 0;
+    background-color:#3a291d;
+    color:#ede0d4;
   }
   
   .footer-basic ul {
     padding:0;
-    list-style:none;
     text-align:center;
     font-size:18px;
-    line-height:1.6;
     margin-bottom:0;
   }
   
   .footer-basic li {
-    padding:0 10px;
+    padding:0 30px;
+    display: inline;
   }
   
   .footer-basic ul a {
     color:inherit;
     text-decoration:none;
     opacity:0.8;
+  }
+  .footer-basic img{
+    position: absolute;
+    bottom: -65px;
+    right: 50px;
+    width: 40px;
   }
   
   .footer-basic ul a:hover {
@@ -291,6 +460,125 @@ body{
     margin-top:15px;
     text-align:center;
     font-size:13px;
-    color:#aaa;
+    color:#ddb892;
     margin-bottom:0;
   }
+  /* Fin Footer */
+
+
+
+  * {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+.vente {
+    border: none;
+    color: black;
+    justify-content: space-around;
+    background-color: white;
+    cursor: pointer;
+    height: 35px;
+    width: 100px;
+    text-align: center;
+    outline: none;
+    font-size: 10px;
+    border-radius: 10px;
+  
+    
+  }
+  
+  .vente:hover {
+    background-color: black;
+    color: #fff;
+   
+  }
+   
+.info-articl{
+    background-color: #fff;
+}
