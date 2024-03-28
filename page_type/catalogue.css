@@ -1,0 +1,75 @@
+
+.main{
+    margin: 10%;
+    margin-top: 80px;
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+    align-items: center;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns:  auto auto auto  ;
+}
+
+.cards .card{
+    margin-right: 20px;  
+    cursor: pointer;
+    /*border: solid black;*/
+    background-color: #f5f5f5;
+    margin-top: 20px;
+
+}
+
+.cards .card img{
+    width: 350px;
+    border: solid 10px #f5f5f5;
+}
+
+.cards .card .card-header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+ .cards .card .card-header .titre{
+    margin-left: 10px;
+ }
+
+.cards .card .card-header .prix{
+    margin-right: 10px;
+}
+
+.cards .card .card-body p{
+    
+    margin-left: 10px;
+}
+
+.cards .card .card-body .achat{
+    width: 150px;
+    height: 60px;
+    border: 3px solid #b08968;
+    border-radius: 45px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background-color: #ad805b;
+    color: #f5f5f5;
+    font-size: 1.2em;
+    font-weight: 550;
+    margin-bottom: 10px;
+    margin-left: 55%;
+}
+
+.cards .card .card-body .achat:hover {
+    background: #b08968;
+    color: white;
+    font-size: 1.5em;
+}
+
+a:visited {
+    color: darkgray; /* Couleur pour les liens visités */
+  }
+  
+  a:link {
+    color: black; /* Couleur par défaut pour les liens non visités */
+  }
