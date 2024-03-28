@@ -1,0 +1,27 @@
+/*Bouton ajouter panier*/
+.nb_ar_add_panier{
+    display: block;
+}
+
+
+    /*Boutton ajouter panier*/
+    .ajout_panier a,#acc{
+        
+        padding: 20px 40px;
+     
+        border-radius: 10px;
+        border: 0;
+        background-color: #b08968;
+        letter-spacing: 1.5px;
+        text-align: center;
+        transition: all .3s ease;
+        box-shadow: 0 6px 3px #8a6b51;
+        color: hsl(0, 0%, 100%);
+        font-weight: bold;
+    }
+   
+
+   
+h1{
+    color: gray;
+}
