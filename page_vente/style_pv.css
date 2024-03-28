@@ -1,0 +1,131 @@
+
+body{
+    margin: 0;
+}
+
+.container{
+    padding-right: 25%;
+    padding-left: 25%;
+}
+
+
+.row2{
+    display: flex;
+    justify-content: center;
+}
+
+.row3{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    padding: 50px 100px 50px 100px;
+    border-radius: 1rem;
+    box-shadow: 0 6px 3px rgba(0,0,0,.2);
+    background-color: #fff;
+    margin-bottom: 15%;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+.text-sm {
+    font-size: 13px;
+}
+
+input[type="text"],input[type="password"]{
+    border: 1px solid #979797;
+}
+
+input {
+padding: 2px 0px;
+border: none;
+border-bottom: 1px solid lightgrey;
+margin-bottom: 5px;
+margin-top: 2px;
+box-sizing: border-box;
+color: #000;
+font-size: 16px;
+letter-spacing: 1px;
+font-weight: 500
+}
+input[type="submit"]:focus {
+-moz-box-shadow: none !important;
+-webkit-box-shadow: none !important;
+box-shadow: none !important;
+border-bottom: 1px solid #b08968;
+outline-width: 0
+}
+button:focus {
+-moz-box-shadow: none !important;
+-webkit-box-shadow: none !important;
+box-shadow: none !important;
+outline-width: 0
+}
+.espa{
+    padding-top: 100px ;
+}
+.btn {
+    position: relative;
+    background-color: #b08968;
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border: 2px solid #fff;
+}
+
+#exp_month,#exp_year{
+    border: 1px solid #979797;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 0;
+}
+
+/*Modification des Drop down menu*/
+.form-group select{
+    padding: 5px 8px;
+    width: 20%;
+    font-size: large;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+}
+
+.select select:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 575px) {
+.border-line {
+border-right: none;
+border-bottom: 1px solid #EEEEEE
+}
+}
+
+.payer
+    {
+        display: block;
+        padding: 20px;
+        margin-bottom: 30px;
+        margin-left: 0pxs;
+        margin-top: 30px;
+        border-radius: 10px;
+        border: 0;
+        background-color: #b08968;
+        letter-spacing: 1.5px;
+        text-align: center;
+        transition: all .3s ease;
+        box-shadow: 0 6px 3px #8a6b51;
+        color: hsl(0, 0%, 100%);
+        font-weight: bold;
+    }
